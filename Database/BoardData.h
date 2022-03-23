@@ -27,6 +27,8 @@ public:
 
     std::tuple<bool, Path> pathExist(const Location &start, Location end);
 
+    Table getData();
+
     ~BoardData();
 };
 

@@ -116,4 +116,8 @@ std::tuple<bool, Path> BoardData::pathExist(const Location &start, Location end)
     return {true, paths.begin()->second};
 }
 
+Table BoardData::getData() {
+    return data;
+}
+
 BoardData::~BoardData() = default;
