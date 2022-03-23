@@ -23,7 +23,7 @@ private:
 public:
     BoardData(const int &numRow, const int &numColumn);
 
-    explicit BoardData(const char **init);
+    explicit BoardData(char **init);
 
     std::tuple<bool, Path> pathExist(const Location &start, Location end);
 

@@ -24,7 +24,7 @@ BoardData::BoardData(const int &numRow, const int &numColumn) {
     data.emplace_back(std::vector<char>(numColumn + 2, ' '));
 }
 
-BoardData::BoardData(const char **init) {
+BoardData::BoardData(char **init) {
     if (init == nullptr) {
         throw std::invalid_argument("Null pointer exception.");
     }
