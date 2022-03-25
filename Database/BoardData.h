@@ -10,6 +10,7 @@
 #include <map>
 #include <tuple>
 #include <stdexcept>
+#include <algorithm>
 
 #include "../Utility/Utilities.h"
 
