@@ -124,3 +124,10 @@ void Utilities::clearLine() {
 void Utilities::sleep(const int &milliseconds) {
     std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 }
+
+int Utilities::generateNumber(const int &limit) {
+    std::random_device seed;
+    std::mt19937 generator{seed()};
+    std::uniform_int_distribution<int> distribution{0, limit};
+    return distribution(generator);
+}

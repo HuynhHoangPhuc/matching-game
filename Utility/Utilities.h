@@ -20,6 +20,8 @@ struct Utilities {
 
     static char generateLetter(const int &limit);
 
+    static int generateNumber(const int &limit);
+
     static void moveCursorUp(const int &n);
 
     static void moveCursorDown(const int &n);
