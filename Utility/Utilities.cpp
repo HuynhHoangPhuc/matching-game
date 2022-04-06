@@ -128,6 +128,6 @@ void Utilities::sleep(const int &milliseconds) {
 int Utilities::generateNumber(const int &limit) {
     std::random_device seed;
     std::mt19937 generator{seed()};
-    std::uniform_int_distribution<int> distribution{0, limit};
+    std::uniform_int_distribution<int> distribution{0, limit - 1};
     return distribution(generator);
 }
