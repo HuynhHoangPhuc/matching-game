@@ -125,9 +125,9 @@ void Utilities::sleep(const int &milliseconds) {
     std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 }
 
-int Utilities::generateNumber(const int &limit) {
+int Utilities::generateNumber(const int &a, const int &b) {
     std::random_device seed;
     std::mt19937 generator{seed()};
-    std::uniform_int_distribution<int> distribution{0, limit - 1};
+    std::uniform_int_distribution<int> distribution{a, b};
     return distribution(generator);
 }

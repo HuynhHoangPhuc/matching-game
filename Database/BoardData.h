@@ -7,8 +7,8 @@
 
 #include <vector>
 #include <queue>
-#include <map>
-#include <tuple>
+#include <unordered_map>
+#include <utility>
 #include <stdexcept>
 #include <algorithm>
 
@@ -16,19 +16,34 @@
 
 using Location = std::pair<int, int>;
 using Table = std::vector<std::vector<char>>;
-using Path = std::vector<Location>;
+using Path = std::vector<int>;
 
 struct BoardData {
 private:
     Table data;
+
+    int numRows;
+
+    int numColumns;
+
+    void generateData();
+
 public:
-    BoardData(const int &numRow, const int &numColumn);
+    BoardData(const int &numRows, const int &numColumns);
 
     explicit BoardData(char **init);
 
-    std::tuple<bool, Path> pathExist(const Location &start, Location end);
-
     Table getData();
+
+    std::vector<Path> findPaths(const int &start, const int &end);
+
+    bool pathExist(const Location &start, const Location &end);
+
+    bool pathExist(const int &start, const int &end);
+
+    [[nodiscard]] Location toLocation(const int &point) const;
+
+    [[nodiscard]] int toPoint(const Location &location) const;
 
     ~BoardData();
 };
